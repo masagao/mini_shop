@@ -25,14 +25,14 @@ $stmt->execute($data);
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 $pro_name = $rec['name'];
 $pro_price = $rec['price'];
-$pro_gazou_name_old = $rec['image'];
+$pro_image_name_old = $rec['image'];
 
 $dbh = null;
 
-if ($pro_gazou_name_old == '') {
-  $desc_gazou = '';
+if ($pro_image_name_old == '') {
+  $desc_image = '';
 } else {
-  $desc_gazou = '<img width="150" src="./image/'.$pro_gazou_name_old.'"><br>';
+  $desc_image = '<img width="150" src="./image/'.$pro_image_name_old.'"><br>';
 }
 
 }catch(Exeption $e) {
@@ -47,14 +47,14 @@ if ($pro_gazou_name_old == '') {
   Product id : <?php echo $pro_code; ?>
   <form method="POST" action="pro_edit_check.php" enctype='multipart/form-data'>
     <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
-    <input type="hidden" name="gazou_name_old" value="<?php echo $pro_gazou_name_old; ?>">
+    <input type="hidden" name="image_name_old" value="<?php echo $pro_image_name_old; ?>">
     Input product name.
     <input type="text" name="name" value="<?php echo $pro_name; ?>">
     <br>
     Input product price.
     <input type="number" name="price" value="<?php echo $pro_price; ?>">
     <br>
-    <?php echo $desc_gazou; ?>
+    <?php echo $desc_image; ?>
     Select product image.
     <input type="file" name="image">
     <br>

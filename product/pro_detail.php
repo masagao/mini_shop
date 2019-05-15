@@ -25,14 +25,14 @@ $stmt->execute($data);
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 $pro_name = $rec['name'];
 $pro_price = $rec['price'];
-$pro_gazou = $rec['image'];
+$pro_image = $rec['image'];
 
 $dbh = null;
 
-if ($pro_gazou == '') {
-  $desc_gazou = '';
+if ($pro_image == '') {
+  $desc_image = '';
 } else {
-  $desc_gazou = 'product image : <br>' . '<image width="150" src="./image/'.$pro_gazou.'">';
+  $desc_image = 'product image : <br>' . '<image width="150" src="./image/'.$pro_image.'">';
 }
 
 }catch(Exeption $e) {
@@ -50,7 +50,7 @@ if ($pro_gazou == '') {
   <br>
   product price : <?php echo $pro_price; ?>
   <br>
-  <?php echo $desc_gazou?>
+  <?php echo $desc_image?>
   <br>
   <input type="button" onclick="history.back()" value="Back">
 </body>

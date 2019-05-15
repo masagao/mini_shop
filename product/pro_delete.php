@@ -22,14 +22,14 @@ $stmt->execute($data);
 
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 $pro_name = $rec['name'];
-$pro_gazou_name = $rec['image'];
+$pro_image_name = $rec['image'];
 
 $dbh = null;
 
-if ($pro_gazou_name == '') {
-  $desc_gazou = '';
+if ($pro_image_name == '') {
+  $desc_image = '';
 } else {
-  $desc_gazou = '<img width="150" src="./image/'.$pro_gazou_name.'">';
+  $desc_image = '<img width="150" src="./image/'.$pro_image_name.'">';
 }
 
 } catch(Exeption $e) {
@@ -45,12 +45,12 @@ if ($pro_gazou_name == '') {
   <br>
   Product image :
   <br>
-  <?php echo $desc_gazou; ?>
+  <?php echo $desc_image; ?>
   <br>
   <?php echo 'Do you want to delete this product ?'?>
   <form method="POST" action="pro_delete_done.php">
     <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
-    <input type="hidden" name="gazou_name" value="<?php echo $pro_gazou_name; ?>">
+    <input type="hidden" name="image_name" value="<?php echo $pro_image_name; ?>">
     <input type="button" onclick="history.back()" value="Back">
     <input type="submit" value="OK">
   </form>

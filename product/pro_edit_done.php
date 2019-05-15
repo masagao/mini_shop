@@ -8,8 +8,8 @@ try {
   $pro_code = $post['id'];
   $pro_name = $post['name'];
   $pro_price = $post['price'];
-  $pro_gazou_name_old = $post['gaou_name_old'];
-  $pro_gazou_name = $post['gazou_name'];
+  $pro_image_name_old = $post['gaou_name_old'];
+  $pro_image_name = $post['image_name'];
 
   $dbh = connectDB();
 
@@ -17,14 +17,14 @@ try {
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_name;
   $data[] = $pro_price;
-  $data[] = $pro_gazou_name;
+  $data[] = $pro_image_name;
   $data[] = $pro_code;
   $stmt->execute($data);
 
   $dbh = null;
-  if ($pro_gazou_name_old != $pro_gazou_name) {
-    if ($pro_gazou_name_old != ''){
-      unlink('./image/'.$pro_gazou_name_old);
+  if ($pro_image_name_old != $pro_image_name) {
+    if ($pro_image_name_old != ''){
+      unlink('./image/'.$pro_image_name_old);
     }
   }
 

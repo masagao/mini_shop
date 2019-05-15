@@ -8,7 +8,7 @@ try {
 
   $pro_name = $post['name'];
   $pro_price = $post['price'];
-  $pro_gazou_name = $post['gazou_name'];
+  $pro_image_name = $post['image_name'];
 
   $dbh = connectDB();
 
@@ -16,7 +16,7 @@ try {
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_name;
   $data[] = intval($pro_price);
-  $data[] = $pro_gazou_name;
+  $data[] = $pro_image_name;
   $stmt->execute($data);
 
   $dbh = null;

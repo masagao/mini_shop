@@ -4,7 +4,7 @@ require_once('../common/common.php');
 
 try {
   $pro_code = $_POST['id'];
-  $pro_gazou_name = $_POST['gazou_name'];
+  $pro_image_name = $_POST['image_name'];
 
   $dbh = connectDB();
 
@@ -22,8 +22,8 @@ try {
 
   $dbh = null;
 
-  if ($pro_gazou_name != '') {
-    unlink('./image/'.$pro_gazou_name);
+  if ($pro_image_name != '') {
+    unlink('./image/'.$pro_image_name);
   }
 
   echo $pro_name .' was deleted.';
