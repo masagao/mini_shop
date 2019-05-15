@@ -4,7 +4,7 @@ require_once('../common/common.php');
 
 $post = sanitize($_POST);
 
-$pro_code = $post['code'];
+$pro_code = $post['id'];
 $pro_name = $post['name'];
 $pro_price = $post['price'];
 $pro_gazou_name_old= $post['gazou_name_old'];
@@ -41,7 +41,7 @@ EDO;
 } else {
   echo <<<EDO
   <form method="POST" action="pro_edit_done.php">
-    <input type="hidden" name="code" value="$pro_code">
+    <input type="hidden" name="id" value="$pro_code">
     <input type="hidden" name="name" value="$pro_name">
     <input type="hidden" name="price" value="$pro_price">
     <input type="hidden" name="gazou_name_old" value="$pro_gazou_name_old">

@@ -17,7 +17,7 @@ $pro_code = htmlspecialchars($pro_code, ENT_QUOTES, UTF-8);
 
 $dbh = connectDB();
 
-$sql = 'select name, price, gazou from mst_product where code=?';
+$sql = 'select name, price, gazou from mst_product where id=?';
 $stmt = $dbh->prepare($sql);
 $data[] = $pro_code;
 $stmt->execute($data);
@@ -44,7 +44,7 @@ if ($pro_gazou == '') {
 
 ?>
   The imfomation of product.<br>
-  product code : <?php echo $pro_code; ?>
+  product id : <?php echo $pro_code; ?>
   <br>
   product name : <?php echo $pro_name; ?>
   <br>

@@ -3,12 +3,12 @@
 require_once('../common/common.php');
 
 try {
-  $pro_code = $_POST['code'];
+  $pro_code = $_POST['id'];
   $pro_gazou_name = $_POST['gazou_name'];
 
   $dbh = connectDB();
 
-  $sql = 'SELECT name from mst_product where code=?';
+  $sql = 'SELECT name from mst_product where id=?';
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_code;
   $stmt->execute($data);
@@ -16,7 +16,7 @@ try {
   $rec = $stmt->fetch(PDO::FETCH_ASSOC);
   $pro_name = $rec['name'];
 
-  $sql = 'DELETE from mst_product where code=?';
+  $sql = 'DELETE from mst_product where id=?';
   $stmt = $dbh->prepare($sql);
   $stmt->execute($data);
 

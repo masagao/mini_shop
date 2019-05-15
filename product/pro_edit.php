@@ -17,7 +17,7 @@ $pro_code = htmlspecialchars($pro_code, ENT_QUOTES, UTF-8);
 
 $dbh = connectDB();
 
-$sql = 'select name, price, gazou from mst_product where code=?';
+$sql = 'select name, price, gazou from mst_product where id=?';
 $stmt = $dbh->prepare($sql);
 $data[] = $pro_code;
 $stmt->execute($data);
@@ -44,9 +44,9 @@ if ($pro_gazou_name_old == '') {
 
 ?>
   Edit Product.<br>
-  Product code : <?php echo $pro_code; ?>
+  Product id : <?php echo $pro_code; ?>
   <form method="POST" action="pro_edit_check.php" enctype='multipart/form-data'>
-    <input type="hidden" name="code" value="<?php echo $pro_code; ?>">
+    <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
     <input type="hidden" name="gazou_name_old" value="<?php echo $pro_gazou_name_old; ?>">
     Input product name.
     <input type="text" name="name" value="<?php echo $pro_name; ?>">

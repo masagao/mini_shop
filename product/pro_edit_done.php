@@ -5,7 +5,7 @@ require_once('../common/common.php');
 try {
   $post = sanitize($_POST);
 
-  $pro_code = $post['code'];
+  $pro_code = $post['id'];
   $pro_name = $post['name'];
   $pro_price = $post['price'];
   $pro_gazou_name_old = $post['gaou_name_old'];
@@ -13,7 +13,7 @@ try {
 
   $dbh = connectDB();
 
-  $sql = 'update mst_product set name=?, price=?, gazou=? where code=?';
+  $sql = 'update mst_product set name=?, price=?, gazou=? where id=?';
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_name;
   $data[] = $pro_price;

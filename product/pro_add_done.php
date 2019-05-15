@@ -24,7 +24,6 @@ try {
   echo $pro_name .' was added in the database.<br>';
 
 } catch(Exception $e){
-  // die($e->getMessage());
   echo 'I am sorry but something might be wrong on this server..';
   exit();
 }

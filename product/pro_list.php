@@ -6,7 +6,7 @@ try{
 
   $dbh = connectDB();
 
-  $sql = 'select code, name, price from mst_product where 1';
+  $sql = 'select id, name, price from mst_product where 1';
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
 
@@ -21,7 +21,7 @@ try{
       break;
     }
     echo <<<EOD
-    <input type="radio" name="pro_code" value="$rec[code]">
+    <input type="radio" name="pro_code" value="$rec[id]">
     $rec[name]:$rec[price]JPY
     <br>
 EOD;

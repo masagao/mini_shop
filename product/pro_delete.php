@@ -15,7 +15,7 @@ $password = 'root';
 $dbh = new PDO($dsn, $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = 'select name, gazou from mst_product where code=?';
+$sql = 'select name, gazou from mst_product where id=?';
 $stmt = $dbh->prepare($sql);
 $data[] = $pro_code;
 $stmt->execute($data);
@@ -49,7 +49,7 @@ if ($pro_gazou_name == '') {
   <br>
   <?php echo 'Do you want to delete this product ?'?>
   <form method="POST" action="pro_delete_done.php">
-    <input type="hidden" name="code" value="<?php echo $pro_code; ?>">
+    <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
     <input type="hidden" name="gazou_name" value="<?php echo $pro_gazou_name; ?>">
     <input type="button" onclick="history.back()" value="Back">
     <input type="submit" value="OK">
