@@ -13,7 +13,7 @@ try {
 
   $dbh = connectDB();
 
-  $sql = 'update mst_product set name=?, price=?, gazou=? where id=?';
+  $sql = 'update mst_product set name=?, price=?, image=? where id=?';
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_name;
   $data[] = $pro_price;
@@ -24,7 +24,7 @@ try {
   $dbh = null;
   if ($pro_gazou_name_old != $pro_gazou_name) {
     if ($pro_gazou_name_old != ''){
-      unlink('./gazou/'.$pro_gazou_name_old);
+      unlink('./image/'.$pro_gazou_name_old);
     }
   }
 

@@ -10,7 +10,7 @@
     <input type="text" name="price">
     <br>
     input picture.
-    <input type="file" name="gazou">
+    <input type="file" name="image">
     <br>
     <input type="button" onclick="history.back()" value="Back">
     <input type="submit" value="OK">

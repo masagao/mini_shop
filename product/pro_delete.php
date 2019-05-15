@@ -15,21 +15,21 @@ $password = 'root';
 $dbh = new PDO($dsn, $user, $password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = 'select name, gazou from mst_product where id=?';
+$sql = 'select name, image from mst_product where id=?';
 $stmt = $dbh->prepare($sql);
 $data[] = $pro_code;
 $stmt->execute($data);
 
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 $pro_name = $rec['name'];
-$pro_gazou_name = $rec['gazou'];
+$pro_gazou_name = $rec['image'];
 
 $dbh = null;
 
 if ($pro_gazou_name == '') {
   $desc_gazou = '';
 } else {
-  $desc_gazou = '<img width="150" src="./gazou/'.$pro_gazou_name.'">';
+  $desc_gazou = '<img width="150" src="./image/'.$pro_gazou_name.'">';
 }
 
 } catch(Exeption $e) {

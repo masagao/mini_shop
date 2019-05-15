@@ -12,7 +12,7 @@ try {
 
   $dbh = connectDB();
 
-  $sql = 'insert into mst_product (name, price, gazou) values (?, ?, ?)';
+  $sql = 'insert into mst_product (name, price, image) values (?, ?, ?)';
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_name;
   $data[] = intval($pro_price);

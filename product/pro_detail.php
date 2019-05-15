@@ -17,7 +17,7 @@ $pro_code = htmlspecialchars($pro_code, ENT_QUOTES, UTF-8);
 
 $dbh = connectDB();
 
-$sql = 'select name, price, gazou from mst_product where id=?';
+$sql = 'select name, price, image from mst_product where id=?';
 $stmt = $dbh->prepare($sql);
 $data[] = $pro_code;
 $stmt->execute($data);
@@ -25,14 +25,14 @@ $stmt->execute($data);
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 $pro_name = $rec['name'];
 $pro_price = $rec['price'];
-$pro_gazou = $rec['gazou'];
+$pro_gazou = $rec['image'];
 
 $dbh = null;
 
 if ($pro_gazou == '') {
   $desc_gazou = '';
 } else {
-  $desc_gazou = 'product image : <br>' . '<image width="150" src="./gazou/'.$pro_gazou.'">';
+  $desc_gazou = 'product image : <br>' . '<image width="150" src="./image/'.$pro_gazou.'">';
 }
 
 }catch(Exeption $e) {

@@ -8,7 +8,7 @@ $pro_code = $post['id'];
 $pro_name = $post['name'];
 $pro_price = $post['price'];
 $pro_gazou_name_old= $post['gazou_name_old'];
-$pro_gazou = $_FILES['gazou'];
+$pro_gazou = $_FILES['image'];
 
 if ($pro_name == '') {
   echo 'Please input product name..<br>';
@@ -27,8 +27,8 @@ if ($pro_gazou['size'] > 0) {
   if ($pro_gazou['size'] > 1000000) {
     echo 'Image size is too large..';
   } else {
-    move_uploaded_file($pro_gazou['tmp_name'], './gazou/'.$pro_gazou['name']);
-    echo '<img width="150" src="./gazou/'.$pro_gazou['name'].'"><br>';
+    move_uploaded_file($pro_gazou['tmp_name'], './image/'.$pro_gazou['name']);
+    echo '<img width="150" src="./image/'.$pro_gazou['name'].'"><br>';
   }
 }
 

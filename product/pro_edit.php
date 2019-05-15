@@ -17,7 +17,7 @@ $pro_code = htmlspecialchars($pro_code, ENT_QUOTES, UTF-8);
 
 $dbh = connectDB();
 
-$sql = 'select name, price, gazou from mst_product where id=?';
+$sql = 'select name, price, image from mst_product where id=?';
 $stmt = $dbh->prepare($sql);
 $data[] = $pro_code;
 $stmt->execute($data);
@@ -25,14 +25,14 @@ $stmt->execute($data);
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 $pro_name = $rec['name'];
 $pro_price = $rec['price'];
-$pro_gazou_name_old = $rec['gazou'];
+$pro_gazou_name_old = $rec['image'];
 
 $dbh = null;
 
 if ($pro_gazou_name_old == '') {
   $desc_gazou = '';
 } else {
-  $desc_gazou = '<img width="150" src="./gazou/'.$pro_gazou_name_old.'"><br>';
+  $desc_gazou = '<img width="150" src="./image/'.$pro_gazou_name_old.'"><br>';
 }
 
 }catch(Exeption $e) {
@@ -56,7 +56,7 @@ if ($pro_gazou_name_old == '') {
     <br>
     <?php echo $desc_gazou; ?>
     Select product image.
-    <input type="file" name="gazou">
+    <input type="file" name="image">
     <br>
     <input type="button" onclick="history.back()" value="Back">
     <input type="submit" value="OK">

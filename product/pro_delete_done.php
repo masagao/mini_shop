@@ -23,7 +23,7 @@ try {
   $dbh = null;
 
   if ($pro_gazou_name != '') {
-    unlink('./gazou/'.$pro_gazou_name);
+    unlink('./image/'.$pro_gazou_name);
   }
 
   echo $pro_name .' was deleted.';
