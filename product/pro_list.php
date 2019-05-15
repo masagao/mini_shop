@@ -20,17 +20,22 @@ try{
     if ($rec == false) {
       break;
     }
-    echo '<input type="radio" name="pro_code" value="'.$rec[code].'">',
-          $rec['name']
-          . ' : ' .
-          $rec['price'].' JPY <br>';
+    echo <<<ENDHEREDOC
+    <input type="radio" name="pro_code" value="$rec[code]">
+    $rec[name]:$rec[price]JPY
+    <br>
+ENDHEREDOC;
   }
-  echo '<input type="submit" name="add" value="add">
-        <input type="submit" name="detail" value="detail">
-        <input type="submit" name="edit" value="edit">
-        <input type="submit" name="delete" value="delete">
-        </form>';
-} catch(Exception $e) {
+
+  echo <<<ENDHEREDOC
+    <input type="submit" name="add" value="add">
+    <input type="submit" name="detail" value="detail">
+    <input type="submit" name="edit" value="edit">
+    <input type="submit" name="delete" value="delete">
+    </form>
+ENDHEREDOC;
+}
+  catch(Exception $e) {
   echo 'I am sorry but something might be wrong on this server..';
   exit();
 }
