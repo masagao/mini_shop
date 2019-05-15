@@ -28,7 +28,7 @@ try {
     }
   }
 
-  echo $pro_name .' was edited.';
+  echo $pro_name .' was edited.<br>';
 } catch(Exception $e){
   echo 'I am sorry but something might be wrong on this server..';
   exit();
