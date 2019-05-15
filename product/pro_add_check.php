@@ -29,13 +29,13 @@ if ($pro_gazou['size'] > 0) {
 }
 
 if ($pro_name == '' || preg_match('/^[0-9]+$/',$pro_price) == 0 || $pro_gazou['size'] > 1000000) {
-  echo <<<EOD
+echo <<<EOD
   <form>
     <input type="button" onclick="history.back()" value="Back">
   </form>
 EOD;
 } else {
-  echo <<<EOD
+echo <<<EOD
   <form method="POST" action="pro_add_done.php">
     <input type="hidden" name="name" value="$pro_name">
     <input type="hidden" name="price" value="$pro_price">
