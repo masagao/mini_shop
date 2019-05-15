@@ -13,10 +13,12 @@ if ($pro_name == '') {
 } elseif (preg_match('/^[0-9]+$/',$pro_price) == 0) {
   echo 'please input correct product price..<br>';
 } else {
-  echo 'Product name : '.$pro_name
-        . '<br>' .
-       'Product price : '.$pro_price .' JPY'
-        . '<br>';
+  echo <<<EOD
+  Product name : $pro_name
+  <br>
+  Product price : $pro_price JPY'
+  <br>
+EOD;
 }
 
 if ($pro_image['size'] > 0) {
