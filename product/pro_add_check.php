@@ -16,10 +16,12 @@ if ($pro_name == '') {
   echo <<<EOD
   Product name : $pro_name
   <br>
-  Product price : $pro_price JPY'
+  Product price : $pro_price JPY
   <br>
 EOD;
 }
+
+var_dump($pro_image);
 
 if ($pro_image['size'] > 0) {
   if ($pro_image['size'] > 1000000) {

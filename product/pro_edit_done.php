@@ -8,7 +8,7 @@ try {
   $pro_code = $post['id'];
   $pro_name = $post['name'];
   $pro_price = $post['price'];
-  $pro_image_name_old = $post['gaou_name_old'];
+  $pro_image_name_old = $post['image_name_old'];
   $pro_image_name = $post['image_name'];
 
   $dbh = connectDB();
@@ -22,6 +22,7 @@ try {
   $stmt->execute($data);
 
   $dbh = null;
+
   if ($pro_image_name_old != $pro_image_name) {
     if ($pro_image_name_old != ''){
       unlink('./image/'.$pro_image_name_old);

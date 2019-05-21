@@ -4,7 +4,7 @@ $pro_code = $_POST['pro_code'];
 
 if (isset($_POST['add']) == true) {
 
-    header ('Location:pro_add.php');
+    header('Location:pro_add.php');
     exit();
 
   } elseif ($pro_code == null) {
