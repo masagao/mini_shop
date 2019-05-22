@@ -21,8 +21,6 @@ if ($pro_name == '') {
 EOD;
 }
 
-var_dump($pro_image);
-
 if ($pro_image['size'] > 0) {
   if ($pro_image['size'] > 1000000) {
     echo 'Image size is too large..';
