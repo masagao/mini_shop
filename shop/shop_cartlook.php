@@ -31,7 +31,7 @@ if(isset($_SESSION['cart']) == true) {
 if($max == 0) {
   echo 'There are no items
         <br>
-        <a href="shop_list.php">Back to shop list</a>';
+        <a href="../index.php">Back to shop list</a>';
   exit();
 }
 
@@ -95,6 +95,6 @@ $dbh = null;
 </form>
 <a href="shop_form.html">Go to order</a>
 <br>
-<a href="shop_list.php">Back to shop list</a>
+<a href="../index.php">Back to shop list</a>
 </body>
 </html>

@@ -28,15 +28,15 @@ if(isset($_SESSION['cart'])){
   if(in_array($pro_code, $cart) == true) {
     echo 'This item has already been in the cart
           <br>
-          <a href="shop_list.php">Back to shop list</a>';
+          <a href="../index.php">Back to shop list</a>';
     exit();
   }
 }
+
 $cart[] = $pro_code;
 $kazu[] = 1;
 $_SESSION['cart'] = $cart;
 $_SESSION['kazu'] = $kazu;
-
 
 }catch(Exeption $e) {
 
@@ -48,6 +48,6 @@ $_SESSION['kazu'] = $kazu;
 ?>
 
 カートに追加しました。<br>
-<a href="shop_list.php">商品一覧に戻る</a>
+<a href="../index.php">商品一覧に戻る</a>
 </body>
 </html>

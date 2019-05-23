@@ -6,4 +6,4 @@ $_SESSION = array();
 session_destroy();
 
 echo 'Cart has cleared<br>
-      <a href="shop_list.php">Go to shop list</a>';
+      <a href="../index.php">Go to shop list</a>';
