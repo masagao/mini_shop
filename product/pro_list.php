@@ -31,6 +31,8 @@ EOD;
     <input type="submit" name="detail" value="detail">
     <input type="submit" name="edit" value="edit">
     <input type="submit" name="delete" value="delete">
+    <br>
+    <a href="../staff/staff_logout.php">Logout:</a>
     </form>
 EOD;
 }
