@@ -93,7 +93,6 @@ $dbh = null;
 <input type="hidden" name="max" value="<?php echo $max;?>">
 <input type="submit" value="count_change">
 </form>
-<a href="shop_form.html">Go to order</a>
 <br>
 <a href="../index.php">Back to shop list</a>
 </body>
