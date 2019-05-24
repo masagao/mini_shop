@@ -2,17 +2,6 @@
 
 require_once('../common/common.php');
 
-session_start();
-session_regenerate_id(true);
-if(isset($_SESSION['login']) == false) {
-  echo 'You did not login
-       <br>
-       <a href="../staff_login/staff_login.html">Go to login page</a>';
-       exit();
-} else {
-  echo $_SESSION['staff_name'].'is login now<br>';
-}
-
 $post = sanitize($_POST);
 
 $staff_name=$post['name'];

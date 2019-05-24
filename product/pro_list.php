@@ -1,6 +1,16 @@
 <?php
 
 require_once('../common/common.php');
+session_start();
+session_regenerate_id(true);
+if(isset($_SESSION['login']) == false) {
+  echo 'You did not login
+       <br>
+       <a href="../staff/staff_login.html">Go to login page</a>';
+       exit();
+} else {
+  echo $_SESSION['staff_name'].'is login now<br>';
+}
 
 try{
 

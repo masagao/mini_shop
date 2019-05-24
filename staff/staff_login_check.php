@@ -6,7 +6,7 @@ try {
 
 $post = sanitize($_POST);
 
-$staff_code = $post['id'];
+$staff_id = $post['id'];
 $staff_pass = $post['pass'];
 
 $staff_pass = md5($staff_pass);
@@ -15,7 +15,7 @@ $dbh = connectDB();
 
 $sql = 'SELECT name from mst_staff where id=? AND password=?';
 $stmt = $dbh->prepare($sql);
-$data[] = $staff_code;
+$data[] = $staff_id;
 $data[] = $staff_pass;
 $stmt->execute($data);
 
@@ -30,7 +30,7 @@ if ($rec == false) {
 } else {
   session_start();
   $_SESSION['login'] = 1;
-  $_SESSION['staff_code'] = $staff_code;
+  $_SESSION['staff_code'] = $staff_id;
   $_SESSION['staff_name'] = $rec['name'];
   header('Location:../product/pro_list.php');
   exit();
