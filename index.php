@@ -27,7 +27,10 @@ try{
 
   echo '<a href="shop/shop_cartlook.php">look into the cart</a><br>';
   echo '<a href="staff/staff_login.html">login</a><br>';
+  
 } catch(Exception $e) {
+
   echo 'I am sorry but something might be wrong on this server..';
   exit();
+
 }

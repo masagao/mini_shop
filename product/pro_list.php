@@ -9,7 +9,7 @@ if(isset($_SESSION['login']) == false) {
        <a href="../staff/staff_login.html">Go to login page</a>';
        exit();
 } else {
-  echo $_SESSION['staff_name'].'is login now<br>';
+  echo $_SESSION['staff_name'].' is login now<br>';
 }
 
 try{
