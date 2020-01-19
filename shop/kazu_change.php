@@ -10,14 +10,14 @@
 
   for($i = 0; $i < $max; $i++) {
     if(preg_match("/^[0-9]+$/", $post['kazu'.$i])==0) {
-      echo 'It is only allowed to use number
+      echo '数字を入力してください
             <br>
-            <a href="shop_cartlook.php">Back to cart</a>';
+            <a href="shop_cartlook.php">カートに戻る</a>';
       exit();
     } elseif($post['kazu'.$i] <=0 || $post['kazu'.$i] >= 11) {
-      echo 'It is only allowed up to 1 to 10
+      echo '1から10までの数を入力してください
             <br>
-            <a href="shop_cartlook.php">Back to cart</a>';
+            <a href="shop_cartlook.php">カートに戻る</a>';
       exit();
     }
     $kazu[] = $post['kazu'.$i];

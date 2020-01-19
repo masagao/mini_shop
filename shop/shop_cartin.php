@@ -26,9 +26,9 @@ if(isset($_SESSION['cart'])){
   $cart = $_SESSION['cart'];
   $kazu = $_SESSION['kazu'];
   if(in_array($pro_code, $cart) == true) {
-    echo 'This item has already been in the cart
+    echo 'この商品はすでにカートに入っています。
           <br>
-          <a href="../index.php">Back to shop list</a>';
+          <a href="../index.php">ショップリストに戻る</a>';
     exit();
   }
 }
@@ -40,7 +40,7 @@ $_SESSION['kazu'] = $kazu;
 
 }catch(Exeption $e) {
 
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 
 }

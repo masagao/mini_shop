@@ -9,5 +9,5 @@ if(isset($_COOKIE[session_name()]) == true){
 
 session_destroy();
 
-echo 'You are logout<br>
-      <a href="staff_login.html">Go to login page</a>';
+echo 'ログアウトしました<br>
+      <a href="staff_login.html">ログイン画面へ</a>';

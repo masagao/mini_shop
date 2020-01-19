@@ -4,12 +4,12 @@ require_once('../common/common.php');
 session_start();
 session_regenerate_id(true);
 if(isset($_SESSION['login']) == false) {
-  echo 'You did not login
+  echo 'ログインしていません
        <br>
-       <a href="../staff/staff_login.html">Go to login page</a>';
+       <a href="../staff/staff_login.html">ログインページへ</a>';
        exit();
 } else {
-  echo $_SESSION['staff_name'].' is login now<br>';
+  echo $_SESSION['staff_name'].' はログイン中です<br>';
 }
 
 try{
@@ -22,7 +22,7 @@ try{
 
   $dbh = null;
 
-  echo 'product list<br>';
+  echo '商品一覧<br>';
 
   echo '<form method="POST" action="pro_branch.php">';
   while(true) {
@@ -32,7 +32,7 @@ try{
     }
     echo <<<EOD
     <input type="radio" name="pro_code" value="$rec[id]">
-    $rec[name]:$rec[price]JPY
+    $rec[name]:$rec[price]円
     <br>
 EOD;
   }
@@ -47,6 +47,6 @@ EOD;
 EOD;
 }
   catch(Exception $e) {
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 }

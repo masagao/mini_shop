@@ -13,12 +13,12 @@ $pro_image = $_FILES['image'];
 if ($pro_name == '') {
   echo 'Please input product name..<br>';
 } elseif(preg_match('/^[0-9]/+$', $pro_price)) {
-  echo 'please input correct product price..<br>';
+  echo '正しい価格を入力してください..<br>';
 } else {
   echo <<<EDO
-  Product name : $pro_name
+  商品名 : $pro_name
   <br>
-  Product price : $pro_price JPY
+  価格 : $pro_price 円
   <br>
 EDO;
 }
@@ -35,7 +35,7 @@ if ($pro_image['size'] > 0) {
 if ($pro_name == '' || preg_match('/^[0-9]/+$', $pro_price) || $pro_image['size'] > 1000000) {
   echo <<<EDO
   <form>
-    <input type="button" onclick="history.back()" value="Back">
+    <input type="button" onclick="history.back()" value="戻る">
   </form>
 EDO;
 } else {
@@ -47,8 +47,8 @@ EDO;
     <input type="hidden" name="image_name_old" value="$pro_image_name_old">
     <input type="hidden" name="image_name" value="$pro_image[name]">
     <br>
-    <input type="button" onclick="history.back()" value="Back">
-    <input type="submit" value="OK">
+    <input type="button" onclick="history.back()" value="戻る">
+    <input type="submit" value="変更する">
   </form>
 EDO;
 }

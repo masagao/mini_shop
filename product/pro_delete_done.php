@@ -28,7 +28,7 @@ try {
 
   echo $pro_name .' was deleted.';
 } catch(Exception $e){
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 }
 

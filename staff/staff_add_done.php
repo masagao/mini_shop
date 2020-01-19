@@ -22,11 +22,11 @@ try {
   session_start();
   $_SESSION['login'] = 1;
   $_SESSION['staff_name'] = $post['name'];
-  echo $staff_name .' was added in the database.';
+  echo $staff_name .' の登録が完了しました.';
 
 } catch(Exception $e){
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 }
 
-echo '<a href="../product/pro_list.php">Go to product list</a>';
+echo '<a href="../product/pro_list.php">商品一覧ページへ</a>';

@@ -34,25 +34,25 @@ if ($pro_image_name == '') {
 
 } catch(Exeption $e) {
 
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 
 }
 
 ?>
-  Delete product.<br>
-  Product name : <?php echo $pro_name; ?>
+  商品を削除する.<br>
+  商品名 : <?php echo $pro_name; ?>
   <br>
-  Product image :
+  商品画像 :
   <br>
   <?php echo $desc_image; ?>
   <br>
-  <?php echo 'Do you want to delete this product ?'?>
+  <?php echo 'この商品を削除しますか ?'?>
   <form method="POST" action="pro_delete_done.php">
     <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
     <input type="hidden" name="image_name" value="<?php echo $pro_image_name; ?>">
-    <input type="button" onclick="history.back()" value="Back">
-    <input type="submit" value="OK">
+    <input type="button" onclick="history.back()" value="戻る">
+    <input type="submit" value="削除する">
   </form>
 </body>
 </html>

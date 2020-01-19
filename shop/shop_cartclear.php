@@ -5,5 +5,5 @@ $_SESSION = array();
 
 session_destroy();
 
-echo 'Cart has cleared<br>
-      <a href="../index.php">Go to shop list</a>';
+echo 'カートの中身を削除しました<br>
+      <a href="../index.php">ショップリストに行く</a>';

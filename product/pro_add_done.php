@@ -16,16 +16,17 @@ try {
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_name;
   $data[] = intval($pro_price);
+  //textのtypeで入力していたものをintval()を使うことで、整数に変換してから保存している。
   $data[] = $pro_image_name;
   $stmt->execute($data);
 
   $dbh = null;
 
-  echo $pro_name .' was added in the database.<br>';
+  echo $pro_name .' の保存完了しました・.<br>';
 
 } catch(Exception $e){
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 }
 
-echo '<a href="pro_list.php">Go to product list</a>';
+echo '<a href="pro_list.php">商品一覧ページへ</a>';
