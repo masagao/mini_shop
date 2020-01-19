@@ -26,7 +26,7 @@ $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($rec == false) {
   echo 'お名前、またはパスワードの入力に間違いがあります。
        <br>
-       <a href="staff_login.html">Back</a>';
+       <a href="staff_login.html">戻る</a>';
 } else {
   session_start();
   $_SESSION['login'] = 1;

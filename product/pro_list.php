@@ -37,12 +37,12 @@ try{
 EOD;
   }
   echo <<<EOD
-    <input type="submit" name="add" value="add">
-    <input type="submit" name="detail" value="detail">
-    <input type="submit" name="edit" value="edit">
-    <input type="submit" name="delete" value="delete">
+    <input type="submit" name="add" value="追加">
+    <input type="submit" name="detail" value="詳細">
+    <input type="submit" name="edit" value="編集">
+    <input type="submit" name="delete" value="削除">
     <br>
-    <a href="../staff/staff_logout.php">Logout:</a>
+    <a href="../staff/staff_logout.php">ログアウト:</a>
     </form>
 EOD;
 }

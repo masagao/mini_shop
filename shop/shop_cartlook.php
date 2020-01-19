@@ -29,7 +29,7 @@ if(isset($_SESSION['cart']) == true) {
 }
 
 if($max == 0) {
-  echo 'There are no items
+  echo 'カートには何も入っていません
         <br>
         <a href="../index.php">ショップリストに戻る</a>';
   exit();

@@ -22,7 +22,7 @@ try {
 
   $dbh = null;
 
-  echo $pro_name .' の保存完了しました・.<br>';
+  echo $pro_name .' を追加しました.<br>';
 
 } catch(Exception $e){
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
