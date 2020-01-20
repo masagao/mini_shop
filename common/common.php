@@ -6,6 +6,7 @@ function sanitize($post) {
   }
   return $sanitized_post;
 }
+
 function connectDB() {
   $dsn = 'mysql:dbname=shop; host=localhost; charset=utf8';
   $user = 'root';

@@ -38,7 +38,7 @@ $dbh = null;
 if ($pro_image == '') {
   $desc_image = '';
 } else {
-  $desc_image = 'product image : <br>' . '<image width="150" src="../product/image/'.$pro_image.'">';
+  $desc_image = '商品画像 : <br>' . '<image width="150" src="../product/image/'.$pro_image.'">';
 }
 
 echo '<a href="shop_cartin.php?pro_code='.$pro_code.'">カートに入れる</a><br>';

@@ -82,16 +82,16 @@ $dbh = null;
   <tr>
     <td><?php echo $pro_name[$i]; ?></td>
     <td><?php echo $pro_gazou[$i]; ?></td>
-    <td>Price : <?php echo $pro_price[$i]; ?> YEN</td>
+    <td>価格 : <?php echo $pro_price[$i]; ?> 円</td>
     <td><input type="text" name="kazu<?php echo $i; ?>" value="<?php echo $kazu[$i]; ?>"></td>
-    <td>Total price : <?php echo $pro_price[$i] * $kazu[$i]; ?> YEN</td>
+    <td>合計金額 : <?php echo $pro_price[$i] * $kazu[$i]; ?> 円</td>
     <td><input type="checkbox" name="sakujo<?php echo $i; ?>"></td>
   </tr>
 <?php } ?>
 </table>
 
 <input type="hidden" name="max" value="<?php echo $max;?>">
-<input type="submit" value="count_change">
+<input type="submit" value="数量を変更する">
 </form>
 <br>
 <a href="../index.php">ショップリストに戻る</a>
