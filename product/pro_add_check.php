@@ -10,7 +10,7 @@ $pro_price = $post['price'];
 $pro_image = $_FILES['image'];
 
 if ($pro_name == '') {
-  echo 'Please input product name..<br>';
+  echo '商品名を入力してください..<br>';
 } elseif (preg_match('/^[0-9]+$/',$pro_price) == 0) {
   //== 0 はfalseだったらなので、0-9以外の文字が入っていたらという意味。
   echo '正しい金額を入力してください..<br>';
