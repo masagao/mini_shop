@@ -24,9 +24,9 @@ $dbh = null;
 $rec = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($rec == false) {
-  echo 'You should have took mistake in entering your ID or Password
+  echo 'お名前、またはパスワードの入力に間違いがあります。
        <br>
-       <a href="staff_login.html">Back</a>';
+       <a href="staff_login.html">戻る</a>';
 } else {
   session_start();
   $_SESSION['login'] = 1;
@@ -39,7 +39,7 @@ if ($rec == false) {
 } catch(Exception $e) {
 
   die($e->getMessage());
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 
 }

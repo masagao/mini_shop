@@ -37,29 +37,29 @@ if ($pro_image_name_old == '') {
 
 }catch(Exeption $e) {
 
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 
 }
 
 ?>
-  Edit Product.<br>
-  Product id : <?php echo $pro_code; ?>
+  商品情報を編集する.<br>
+  商品ID : <?php echo $pro_code; ?>
   <form method="POST" action="pro_edit_check.php" enctype='multipart/form-data'>
     <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
     <input type="hidden" name="image_name_old" value="<?php echo $pro_image_name_old; ?>">
-    Input product name.
+    商品名を入力してください.
     <input type="text" name="name" value="<?php echo $pro_name; ?>">
     <br>
-    Input product price.
+    商品の価格を入力してください.
     <input type="number" name="price" value="<?php echo $pro_price; ?>">
     <br>
     <?php echo $desc_image; ?>
-    Select product image.
+    商品の画像を選んでください.
     <input type="file" name="image">
     <br>
-    <input type="button" onclick="history.back()" value="Back">
-    <input type="submit" value="OK">
+    <input type="button" onclick="history.back()" value="戻る">
+    <input type="submit" value="確認">
   </form>
 </body>
 </html>

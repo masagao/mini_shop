@@ -37,21 +37,21 @@ if ($pro_image == '') {
 
 }catch(Exeption $e) {
 
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 
 }
 
 ?>
-  The imfomation of product.<br>
-  product id : <?php echo $pro_code; ?>
+  商品の情報.<br>
+  商品のID : <?php echo $pro_code; ?>
   <br>
-  product name : <?php echo $pro_name; ?>
+  商品名 : <?php echo $pro_name; ?>
   <br>
-  product price : <?php echo $pro_price; ?>
+  価格 : <?php echo $pro_price; ?>
   <br>
   <?php echo $desc_image?>
   <br>
-  <input type="button" onclick="history.back()" value="Back">
+  <input type="button" onclick="history.back()" value="戻る">
 </body>
 </html>

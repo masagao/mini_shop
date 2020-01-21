@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
 <body>
-  Add Products.
+  商品追加ページ
   <form method="POST" action="pro_add_check.php" enctype='multipart/form-data'>
-    input product name.
+    商品名を入力してください。
     <input type="text" name="name">
     <br>
-    input product price.
+    価格を入力してください。
     <input type="text" name="price">
     <br>
-    input picture.
+    商品の画像を追加してください。
     <input type="file" name="image">
     <br>
-    <input type="button" onclick="history.back()" value="Back">
-    <input type="submit" value="OK">
+    <input type="button" onclick="history.back()" value="戻る">
+    <input type="submit" value="確定">
   </form>
 </body>
 </html>

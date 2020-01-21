@@ -29,9 +29,9 @@ if(isset($_SESSION['cart']) == true) {
 }
 
 if($max == 0) {
-  echo 'There are no items
+  echo 'カートには何も入っていません
         <br>
-        <a href="../index.php">Back to shop list</a>';
+        <a href="../index.php">ショップリストに戻る</a>';
   exit();
 }
 
@@ -58,7 +58,7 @@ $dbh = null;
 
 }catch(Exeption $e) {
 
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております...';
   exit();
 
 }
@@ -70,30 +70,30 @@ $dbh = null;
 
 <table border="1">
 <tr>
-<td>Product : </td>
-<td>Image : </td>
-<td>Price : </td>
-<td>Count : </td>
-<td>Total : </td>
-<td>Delete : </td>
+<td>商品 : </td>
+<td>画像 : </td>
+<td>価格 : </td>
+<td>数量 : </td>
+<td>合計 : </td>
+<td>削除 : </td>
 
 </tr>
 <?php for($i=0; $i<$max; $i++) { ?>
   <tr>
     <td><?php echo $pro_name[$i]; ?></td>
     <td><?php echo $pro_gazou[$i]; ?></td>
-    <td>Price : <?php echo $pro_price[$i]; ?> YEN</td>
+    <td>価格 : <?php echo $pro_price[$i]; ?> 円</td>
     <td><input type="text" name="kazu<?php echo $i; ?>" value="<?php echo $kazu[$i]; ?>"></td>
-    <td>Total price : <?php echo $pro_price[$i] * $kazu[$i]; ?> YEN</td>
+    <td>合計金額 : <?php echo $pro_price[$i] * $kazu[$i]; ?> 円</td>
     <td><input type="checkbox" name="sakujo<?php echo $i; ?>"></td>
   </tr>
 <?php } ?>
 </table>
 
 <input type="hidden" name="max" value="<?php echo $max;?>">
-<input type="submit" value="count_change">
+<input type="submit" value="数量を変更する">
 </form>
 <br>
-<a href="../index.php">Back to shop list</a>
+<a href="../index.php">ショップリストに戻る</a>
 </body>
 </html>

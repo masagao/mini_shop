@@ -10,7 +10,7 @@ require_once('../common/common.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Shop</title>
+  <title>ショップ</title>
 </head>
 <body>
 <?php
@@ -38,28 +38,28 @@ $dbh = null;
 if ($pro_image == '') {
   $desc_image = '';
 } else {
-  $desc_image = 'product image : <br>' . '<image width="150" src="../product/image/'.$pro_image.'">';
+  $desc_image = '商品画像 : <br>' . '<image width="150" src="../product/image/'.$pro_image.'">';
 }
 
-echo '<a href="shop_cartin.php?pro_code='.$pro_code.'">Take into the cart</a><br>';
+echo '<a href="shop_cartin.php?pro_code='.$pro_code.'">カートに入れる</a><br>';
 
 }catch(Exeption $e) {
 
-  echo 'I am sorry but something might be wrong on this server..';
+  echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 
 }
 
 ?>
-  The imfomation of product.<br>
-  product id : <?php echo $pro_code; ?>
+  商品情報.<br>
+  商品ID : <?php echo $pro_code; ?>
   <br>
-  product name : <?php echo $pro_name; ?>
+  商品名 : <?php echo $pro_name; ?>
   <br>
-  product price : <?php echo $pro_price; ?>
+  商品の価格 : <?php echo $pro_price; ?>
   <br>
   <?php echo $desc_image?>
   <br>
-  <input type="button" onclick="history.back()" value="Back">
+  <input type="button" onclick="history.back()" value="戻る">
 </body>
 </html>
