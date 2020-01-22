@@ -3,6 +3,7 @@
 $pro_code = $_POST['pro_code'];
 
 if (isset($_POST['add']) == true) {
+  //addが選択されていたら
 
     header('Location:pro_add.php');
     exit();

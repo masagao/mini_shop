@@ -17,16 +17,18 @@ try{
   $dbh = connectDB();
 
   $sql = 'select id, name, price from mst_product where 1';
+  // select カラム from 〜から where1　1は「全て」という意味
   $stmt = $dbh->prepare($sql);
-  $stmt->execute();
-
+  $stmt->execute();//この段階で$stmtには全てのデータが入っている。
   $dbh = null;
 
   echo '商品一覧<br>';
 
   echo '<form method="POST" action="pro_branch.php">';
+  //radioで選択されたデータをbranchに飛ばす。nameはpro_code
   while(true) {
     $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+    //$stmtが有る限り$recに格納していく。
     if ($rec == false) {
       break;
     }
@@ -45,6 +47,7 @@ EOD;
     <a href="../staff/staff_logout.php">ログアウト:</a>
     </form>
 EOD;
+  //form閉じタグはここまであります。
 }
   catch(Exception $e) {
   echo 'ただいま障害により大変ご迷惑をおかけしております..';

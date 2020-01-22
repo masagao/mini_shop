@@ -29,7 +29,7 @@ try {
     }
   }
 
-  echo $pro_name .' was edited.<br>';
+  echo $pro_name .' は編集されました.<br>';
 } catch(Exception $e){
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();

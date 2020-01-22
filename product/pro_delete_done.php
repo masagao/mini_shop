@@ -26,10 +26,10 @@ try {
     unlink('./image/'.$pro_image_name);
   }
 
-  echo $pro_name .' was deleted.';
+  echo $pro_name .' は削除されました.';
 } catch(Exception $e){
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
   exit();
 }
 
-echo '<a href="pro_list.php">Go to product list</a>';
+echo '<a href="pro_list.php">商品一覧へ</a>';

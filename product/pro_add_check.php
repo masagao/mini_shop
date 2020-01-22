@@ -65,3 +65,4 @@ echo <<<EOD
   </form>
 EOD;
 }
+// hiddenにすることでユーザーの操作を回避できる。
