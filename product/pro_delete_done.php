@@ -8,7 +8,7 @@ try {
 
   $dbh = connectDB();
 
-  $sql = 'SELECT name from mst_product where id=?';
+  $sql = 'SELECT name from product where id=?';
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_code;
   $stmt->execute($data);
@@ -16,19 +16,16 @@ try {
   $rec = $stmt->fetch(PDO::FETCH_ASSOC);
   $pro_name = $rec['name'];
 
-  $sql = 'DELETE from mst_product where id=?';
+  $sql = 'DELETE from product where id=?';
   $stmt = $dbh->prepare($sql);
   $stmt->execute($data);
 
   $dbh = null;
 
-  if ($pro_image_name != '') {
-    unlink('./image/'.$pro_image_name);
-  }
-
-  echo $pro_name .' was deleted.';
-} catch(Exception $e){
+  echo $pro_name . ' を削除しました<br>';
+} catch (Exception $e) {
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
+  echo $e->getMessage();
   exit();
 }
 

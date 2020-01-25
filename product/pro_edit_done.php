@@ -3,17 +3,15 @@
 require_once('../common/common.php');
 
 try {
-  $post = sanitize($_POST);
-
-  $pro_code = $post['id'];
-  $pro_name = $post['name'];
-  $pro_price = $post['price'];
-  $pro_image_name_old = $post['image_name_old'];
-  $pro_image_name = $post['image_name'];
+  $pro_code = $_POST['id'];
+  $pro_name = $_POST['name'];
+  $pro_price = $_POST['price'];
+  $pro_image_name_old = $_POST['image_name_old'];
+  $pro_image_name = $_POST['image_name'];
 
   $dbh = connectDB();
 
-  $sql = 'update mst_product set name=?, price=?, image=? where id=?';
+  $sql = 'update product set name=?, price=?, image=? where id=?';
   $stmt = $dbh->prepare($sql);
   $data[] = $pro_name;
   $data[] = $pro_price;
@@ -23,15 +21,10 @@ try {
 
   $dbh = null;
 
-  if ($pro_image_name_old != $pro_image_name) {
-    if ($pro_image_name_old != ''){
-      unlink('./image/'.$pro_image_name_old);
-    }
-  }
-
-  echo $pro_name .' was edited.<br>';
-} catch(Exception $e){
+  echo $pro_name . ' を編集しました<br>';
+} catch (Exception $e) {
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
+  echo $e->getMessage();
   exit();
 }
 
