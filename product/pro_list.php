@@ -17,9 +17,10 @@ try {
   $dbh = connectDB();
 
   $sql = 'select id, name, price from product where 1';
-  $stmt = $dbh->prepare($sql);
-  $stmt->execute();
+  // select カラム from 〜から where1　1は「全て」という意味
 
+  $stmt = $dbh->prepare($sql);
+  $stmt->execute();//この段階で$stmtには全てのデータが入っている。
   $dbh = null;
 
   echo <<<EOD
@@ -28,6 +29,7 @@ try {
 EOD;
   while (true) {
     $rec = $stmt->fetch(PDO::FETCH_ASSOC);
+    //$stmtが有る限り$recに格納していく。
     if ($rec == false) {
       break;
     }
@@ -46,6 +48,7 @@ EOD;
       <a href="../staff/staff_logout.php">ログアウト:</a>
     </form>
 EOD;
+
 } catch (Exception $e) {
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
   echo $e->getMessage();

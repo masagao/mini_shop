@@ -11,12 +11,13 @@ try {
   $dbh = connectDB();
 
   $sql = 'insert into product (name, price, image) values (?, ?, ?)';
-  $stmt = $dbh->prepare($sql);
-  $data[] = $pro_name;
+  $stmt = $dbh->prepare($sql); //準備する命令
+  $data[] = $pro_name; //?にセットしたい物を記入する。
+
   $data[] = intval($pro_price);
   //textのtypeで入力していたものをintval()を使うことで、整数に変換してから保存している。
   $data[] = $pro_image_name;
-  $stmt->execute($data);
+  $stmt->execute($data); //指令を実行します
 
   $dbh = null;
 

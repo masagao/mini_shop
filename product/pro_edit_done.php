@@ -20,8 +20,9 @@ try {
   $stmt->execute($data);
 
   $dbh = null;
-
+  
   echo $pro_name . ' を編集しました<br>';
+
 } catch (Exception $e) {
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
   echo $e->getMessage();
