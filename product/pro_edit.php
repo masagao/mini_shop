@@ -27,7 +27,7 @@
     if ($pro_image_name_old == '') {
       $desc_image = '';
     } else {
-      $desc_image = '<img width="150" src="./image/' . $pro_image_name_old . '"><br>';
+      $desc_image = '<img width="100" src="./image/' . $pro_image_name_old . '"><br>';
     }
   } catch (Exeption $e) {
     echo 'ただいま障害により大変ご迷惑をおかけしております..';
@@ -36,7 +36,7 @@
   }
 
   ?>
-  ・商品情報を編集する<br>
+  ・商品の編集<br>
   <form method="POST" action="pro_edit_check.php" enctype='multipart/form-data'>
     <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
     <input type="hidden" name="image_name_old" value="<?php echo $pro_image_name_old; ?>">

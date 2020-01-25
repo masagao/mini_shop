@@ -27,7 +27,7 @@
     if ($pro_image == '') {
       $desc_image = '';
     } else {
-      $desc_image = '商品画像 : <br><image width="150" src="../product/image/' . $pro_image . '"><br>';
+      $desc_image = '商品画像 : <br><image width="100" src="../product/image/' . $pro_image . '"><br>';
     }
   } catch (Exeption $e) {
     echo 'ただいま障害により大変ご迷惑をおかけしております..';

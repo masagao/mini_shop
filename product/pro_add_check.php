@@ -11,7 +11,7 @@ $pro_image = $_FILES['image'];
 
 if ($pro_name == '') {
   echo '商品名を入力してください..<br>';
-} elseif (preg_match('/^[0-9]+$/',$pro_price) == 0) {
+} elseif (preg_match('/^[0-9]+$/', $pro_price) == 0) {
   //== 0 はfalseだったらなので、0-9以外の文字が入っていたらという意味。
   echo '正しい金額を入力してください..<br>';
 } else {
@@ -36,8 +36,8 @@ if ($pro_image['size'] > 0) {
     // １メガバイト
     echo '画像サイズが大きすぎます..';
   } else {
-    move_uploaded_file($pro_image['tmp_name'], './image/'.$pro_image['name']);
-    echo '<img width="150" src="./image/'.$pro_image['name'].'"><br>';
+    move_uploaded_file($pro_image['tmp_name'], './image/' . $pro_image['name']);
+    echo '<img width="100" src="./image/' . $pro_image['name'] . '"><br>';
   }
 }
 
@@ -47,14 +47,14 @@ if ($pro_image['size'] > 0) {
 // [.]プログラムと同じフォルダ
 // [..]1段上のフォルダ
 
-if ($pro_name == '' || preg_match('/^[0-9]+$/',$pro_price) == 0 || $pro_image['size'] > 1000000) {
+if ($pro_name == '' || preg_match('/^[0-9]+$/', $pro_price) == 0 || $pro_image['size'] > 1000000) {
   echo <<<EOD
   <form>
     <input type="button" onclick="history.back()" value="戻る">
   </form>
 EOD;
 } else {
-echo <<<EOD
+  echo <<<EOD
   <form method="POST" action="pro_add_done.php">
     <input type="hidden" name="name" value="$pro_name">
     <input type="hidden" name="price" value="$pro_price">

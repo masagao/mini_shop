@@ -45,7 +45,7 @@ EOD;
       <input type="submit" name="edit" value="編集">
       <input type="submit" name="delete" value="削除">
       <br>
-      <a href="../staff/staff_logout.php">ログアウト:</a>
+      <a href="../staff/staff_logout.php">ログアウトする</a>
     </form>
 EOD;
 

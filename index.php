@@ -23,9 +23,8 @@ try {
 EOD;
   }
 
-  echo '<a href="shop/shop_cartlook.php">カートの中を見る</a><br>';
-  echo '<a href="staff/staff_login.php">ログイン</a><br>';
-  
+  echo '<a href="shop/shop_cartlook.php">カート詳細へ</a><br>';
+  echo '<a href="staff/staff_login.php">ログインする</a><br>';
 } catch (Exception $e) {
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
   echo $e->getMessage();

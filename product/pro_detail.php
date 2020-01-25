@@ -27,7 +27,7 @@
     if ($pro_image == '') {
       $desc_image = '';
     } else {
-      $desc_image = '<image width="150" src="./image/' . $pro_image . '">';
+      $desc_image = '<image width="100" src="./image/' . $pro_image . '">';
     }
   } catch (Exeption $e) {
     echo 'ただいま障害により大変ご迷惑をおかけしております..';

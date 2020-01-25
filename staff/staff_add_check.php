@@ -29,7 +29,6 @@ if ($staff_name == '' || $staff_pass1 == '' || $staff_pass1 !== $staff_pass2) {
   echo '<form method="POST" action="staff_add_done.php">
         <input type="hidden" name="name" value="' . $staff_name . '">
         <input type="hidden" name="pass" value="' . $staff_pass . '">
-        <br>
         <input type="button" onclick="history.back()" value="戻る">
         <input type="submit" value="登録する">
         </form>';

@@ -26,7 +26,7 @@
     if ($pro_image_name == '') {
       $desc_image = '';
     } else {
-      $desc_image = '商品画像 : <br><img width="150" src="./image/' . $pro_image_name . '">';
+      $desc_image = '商品画像 : <br><img width="100" src="./image/' . $pro_image_name . '">';
     }
   } catch (Exeption $e) {
     echo 'ただいま障害により大変ご迷惑をおかけしております..';
@@ -35,7 +35,7 @@
   }
   ?>
 
-  ・商品を削除する.<br>
+  ・商品の削除<br>
   商品名 : <?php echo $pro_name; ?>
   <br>
   <?php echo $desc_image; ?>
