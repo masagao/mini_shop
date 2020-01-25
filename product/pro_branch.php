@@ -33,5 +33,3 @@ if (isset($_POST['add']) == true) {
   }
 
 }
-
-?>

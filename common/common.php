@@ -1,5 +1,6 @@
 <?php
-function sanitize($post) {
+function sanitize($post)
+{
   foreach ($post as $key => $value) {
     $sanitized_post[$key] = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
     // htmlspecialcharsはweb用の安全対策。$valueに含まれる危険な文字をサニタイズして$sanitized_postに代入しています。
@@ -7,7 +8,8 @@ function sanitize($post) {
   return $sanitized_post;
 }
 
-function connectDB() {
+function connectDB()
+{
   $dsn = 'mysql:dbname=shop; host=localhost; charset=utf8';
   $user = 'root';
   $password = 'root';

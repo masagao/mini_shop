@@ -2,8 +2,9 @@
 
 session_start();
 $_SESSION = array();
-
 session_destroy();
 
-echo 'カートの中身を削除しました<br>
-      <a href="../index.php">ショップリストに行く</a>';
+echo <<<EOD
+      カートを空にしました<br>
+      <a href="../index.php">商品一覧に行く</a>
+EOD;
