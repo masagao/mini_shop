@@ -24,9 +24,9 @@
     $dbh = null;
 
     if ($pro_image_name == '') {
-      $desc_image = '';
+      $image = '';
     } else {
-      $desc_image = '商品画像 : <br><img width="100" src="./image/' . $pro_image_name . '">';
+      $image = '商品画像 : <br><img width="100" src="./image/' . $pro_image_name . '"><br>';
     }
   } catch (Exeption $e) {
     echo 'ただいま障害により大変ご迷惑をおかけしております..';
@@ -38,11 +38,11 @@
   ・商品の削除<br>
   商品名 : <?php echo $pro_name; ?>
   <br>
-  <?php echo $desc_image; ?>
+  <?php echo $image; ?>
   <?php echo 'この商品を削除しますか ?' ?>
   <form method="POST" action="pro_delete_done.php">
     <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
-    <input type="hidden" name="image_name" value="<?php echo $pro_image_name; ?>">
+    <input type="hidden" name="name" value="<?php echo $pro_name; ?>">
     <input type="button" onclick="history.back()" value="戻る">
     <input type="submit" value="削除する">
   </form>

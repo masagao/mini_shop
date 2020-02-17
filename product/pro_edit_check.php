@@ -7,7 +7,6 @@ $post = sanitize($_POST);
 $pro_code = $post['id'];
 $pro_name = $post['name'];
 $pro_price = $post['price'];
-$pro_image_name_old = $post['image_name_old'];
 $pro_image = $_FILES['image'];
 
 if ($pro_name == '') {
@@ -44,7 +43,6 @@ EDO;
     <input type="hidden" name="id" value="$pro_code">
     <input type="hidden" name="name" value="$pro_name">
     <input type="hidden" name="price" value="$pro_price">
-    <input type="hidden" name="image_name_old" value="$pro_image_name_old">
     <input type="hidden" name="image_name" value="$pro_image[name]">
     <br>
     <input type="button" onclick="history.back()" value="戻る">

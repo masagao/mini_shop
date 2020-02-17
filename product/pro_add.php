@@ -8,7 +8,7 @@
     <input type="text" name="name">
     <br>
     価格を入力してください
-    <input type="text" name="price">
+    <input type="number" name="price">
     <br>
     商品の画像を追加してください
     <input type="file" name="image">

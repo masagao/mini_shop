@@ -20,14 +20,14 @@
     $rec = $stmt->fetch(PDO::FETCH_ASSOC);
     $pro_name = $rec['name'];
     $pro_price = $rec['price'];
-    $pro_image_name_old = $rec['image'];
+    $pro_image_name = $rec['image'];
 
     $dbh = null;
 
-    if ($pro_image_name_old == '') {
-      $desc_image = '';
+    if ($pro_image_name == '') {
+      $image = '';
     } else {
-      $desc_image = '<img width="100" src="./image/' . $pro_image_name_old . '"><br>';
+      $image = '<img width="100" src="./image/' . $pro_image_name . '"><br>';
     }
   } catch (Exeption $e) {
     echo 'ただいま障害により大変ご迷惑をおかけしております..';
@@ -39,14 +39,13 @@
   ・商品の編集<br>
   <form method="POST" action="pro_edit_check.php" enctype='multipart/form-data'>
     <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
-    <input type="hidden" name="image_name_old" value="<?php echo $pro_image_name_old; ?>">
     商品名を入力してください
     <input type="text" name="name" value="<?php echo $pro_name; ?>">
     <br>
     商品の価格を入力してください
     <input type="number" name="price" value="<?php echo $pro_price; ?>">
     <br>
-    <?php echo $desc_image; ?>
+    <?php echo $image; ?>
     商品の画像を選んでください
     <input type="file" name="image">
     <br>

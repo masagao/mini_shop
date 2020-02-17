@@ -25,9 +25,9 @@
     $dbh = null;
 
     if ($pro_image == '') {
-      $desc_image = '';
+      $image = '';
     } else {
-      $desc_image = '<image width="100" src="./image/' . $pro_image . '">';
+      $image = '<image width="100" src="./image/' . $pro_image . '"><br>';
     }
   } catch (Exeption $e) {
     echo 'ただいま障害により大変ご迷惑をおかけしております..';
@@ -41,8 +41,7 @@
   <br>
   価格 : <?php echo $pro_price; ?>
   <br>
-  <?php echo $desc_image ?>
-  <br>
+  <?php echo $image ?>
   <input type="button" onclick="history.back()" value="戻る">
 
 </body>

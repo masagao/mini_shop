@@ -25,9 +25,9 @@
     $dbh = null;
 
     if ($pro_image == '') {
-      $desc_image = '';
+      $image = '';
     } else {
-      $desc_image = '商品画像 : <br><image width="100" src="../product/image/' . $pro_image . '"><br>';
+      $image = '商品画像 : <br><image width="100" src="../product/image/' . $pro_image . '"><br>';
     }
   } catch (Exeption $e) {
     echo 'ただいま障害により大変ご迷惑をおかけしております..';
@@ -41,7 +41,7 @@
   <br>
   商品の価格 : <?php echo $pro_price; ?>
   <br>
-  <?php echo $desc_image ?>
+  <?php echo $image ?>
   <a href="shop_cartin.php?pro_code=<?php echo $pro_code; ?>">カートに入れる</a>
   <br>
   <input type="button" onclick="history.back()" value="戻る">

@@ -6,7 +6,6 @@ try {
   $pro_code = $_POST['id'];
   $pro_name = $_POST['name'];
   $pro_price = $_POST['price'];
-  $pro_image_name_old = $_POST['image_name_old'];
   $pro_image_name = $_POST['image_name'];
 
   $dbh = connectDB();
@@ -20,9 +19,8 @@ try {
   $stmt->execute($data);
 
   $dbh = null;
-  
-  echo $pro_name . ' を編集しました<br>';
 
+  echo $pro_name . ' を編集しました<br>';
 } catch (Exception $e) {
   echo 'ただいま障害により大変ご迷惑をおかけしております..';
   echo $e->getMessage();
