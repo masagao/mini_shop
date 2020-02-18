@@ -1,6 +1,5 @@
 <?php
 
-// セッション
 session_start();
 $_SESSION = array();
 

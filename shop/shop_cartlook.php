@@ -2,8 +2,8 @@
 <html lang="ja">
 
 <body>
-
   <?php
+
   require_once('../common/common.php');
 
   session_start();
@@ -26,11 +26,11 @@
     }
 
     $dbh = connectDB();
-    $sql = 'select id, name, price, image from product where id=?';
+    $sql = 'select name, price, image from product where id=?';
     $stmt = $dbh->prepare($sql);
 
-    foreach ($cart as $key => $val) {
-      $data[0] = $val;
+    foreach ($cart as $pro_id) {
+      $data[0] = $pro_id;
       $stmt->execute($data);
 
       $rec = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -46,7 +46,7 @@
 
     $dbh = null;
   } catch (Exeption $e) {
-    echo 'ただいま障害により大変ご迷惑をおかけしております..';
+    echo '何かしらのエラーが発生しています';
     echo $e->getMessage();
     exit();
   }

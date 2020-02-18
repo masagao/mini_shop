@@ -20,7 +20,7 @@ try {
   // select カラム from 〜から where1　1は「全て」という意味
 
   $stmt = $dbh->prepare($sql);
-  $stmt->execute();//この段階で$stmtには全てのデータが入っている。
+  $stmt->execute(); //この段階で$stmtには全てのデータが入っている。
   $dbh = null;
 
   echo <<<EOD
@@ -48,9 +48,8 @@ EOD;
       <a href="../staff/staff_logout.php">ログアウトする</a>
     </form>
 EOD;
-
 } catch (Exception $e) {
-  echo 'ただいま障害により大変ご迷惑をおかけしております..';
+  echo '何かしらのエラーが発生しています';
   echo $e->getMessage();
   exit();
 }

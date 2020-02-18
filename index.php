@@ -1,6 +1,9 @@
 <?php
+
 require_once('common/common.php');
+
 try {
+
   $dbh = connectDB();
 
   $sql = 'select id, name, price from product where 1';
@@ -25,8 +28,9 @@ EOD;
 
   echo '<a href="shop/shop_cartlook.php">カート詳細へ</a><br>';
   echo '<a href="staff/staff_login.php">ログインする</a><br>';
+
 } catch (Exception $e) {
-  echo 'ただいま障害により大変ご迷惑をおかけしております..';
+  echo '何かしらのエラーが発生しています';
   echo $e->getMessage();
   exit();
 }

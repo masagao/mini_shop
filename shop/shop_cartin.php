@@ -2,7 +2,6 @@
 <html lang="ja">
 
 <body>
-
   <?php
 
   require_once('../common/common.php');
@@ -11,11 +10,12 @@
   session_regenerate_id(true);
 
   try {
-    $pro_code = $_GET['pro_code'];
+
+    $pro_id = $_GET['pro_code'];
 
     if (isset($_SESSION['cart'])) {
       $cart = $_SESSION['cart'];
-      if (in_array($pro_code, $cart) == true) {
+      if (in_array($pro_id, $cart) == true) {
         echo 'この商品はすでにカートに入っています。
             <br>
             <a href="../index.php">商品一覧に戻る</a>';
@@ -23,10 +23,10 @@
       }
     }
 
-    $cart[] = $pro_code;
+    $cart[] = $pro_id;
     $_SESSION['cart'] = $cart;
   } catch (Exeption $e) {
-    echo 'ただいま障害により大変ご迷惑をおかけしております..';
+    echo '何かしらのエラーが発生しています';
     echo $e->getMessage();
     exit();
   }

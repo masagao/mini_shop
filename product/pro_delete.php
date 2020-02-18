@@ -7,14 +7,14 @@
   require_once('../common/common.php');
 
   try {
-    $pro_code = $_GET['pro_code'];
-    $pro_code = htmlspecialchars($pro_code, ENT_QUOTES, 'UTF-8');
+    $pro_id = $_GET['pro_code'];
+    $pro_id = htmlspecialchars($pro_id, ENT_QUOTES, 'UTF-8');
 
     $dbh = connectDB();
 
     $sql = 'select name, image from product where id=?';
     $stmt = $dbh->prepare($sql);
-    $data[] = $pro_code;
+    $data[] = $pro_id;
     $stmt->execute($data);
 
     $rec = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -29,7 +29,7 @@
       $image = '商品画像 : <br><img width="100" src="./image/' . $pro_image_name . '"><br>';
     }
   } catch (Exeption $e) {
-    echo 'ただいま障害により大変ご迷惑をおかけしております..';
+    echo '何かしらのエラーが発生しています';
     echo $e->getMessage();
     exit();
   }
@@ -41,7 +41,7 @@
   <?php echo $image; ?>
   <?php echo 'この商品を削除しますか ?' ?>
   <form method="POST" action="pro_delete_done.php">
-    <input type="hidden" name="id" value="<?php echo $pro_code; ?>">
+    <input type="hidden" name="id" value="<?php echo $pro_id; ?>">
     <input type="hidden" name="name" value="<?php echo $pro_name; ?>">
     <input type="button" onclick="history.back()" value="戻る">
     <input type="submit" value="削除する">

@@ -16,15 +16,11 @@ try {
   $stmt->execute($data);
 
   $dbh = null;
-
-  session_start();
-  $_SESSION['login'] = 1;
-  $_SESSION['staff_name'] = $post['name'];
-  echo $staff_name . ' の登録が完了しました.';
 } catch (Exception $e) {
-  echo 'ただいま障害により大変ご迷惑をおかけしております..';
+  echo '何かしらのエラーが発生しています';
   echo $e->getMessage();
   exit();
 }
 
-echo '<a href="../product/pro_list.php">商品一覧ページへ</a>';
+echo $staff_name . ' の登録が完了しました<br>';
+echo '<a href="staff_login.php">ログインする</a>';

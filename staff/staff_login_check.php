@@ -33,7 +33,7 @@ try {
     exit();
   }
 } catch (Exception $e) {
-  echo 'ただいま障害により大変ご迷惑をおかけしております..';
+  echo '何かしらのエラーが発生しています';
   echo $e->getMessage();
   exit();
 }
