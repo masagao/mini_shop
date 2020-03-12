@@ -11,17 +11,18 @@ try {
   $dbh = connectDB();
 
   $sql = 'insert into product (name, price, image) values (?, ?, ?)';
-  $stmt = $dbh->prepare($sql); //準備する命令
-  $data[] = $pro_name; //?にセットしたい物を記入する。
+  $stmt = $dbh->prepare($sql);
 
-  $data[] = intval($pro_price);
-  //textのtypeで入力していたものをintval()を使うことで、整数に変換してから保存している。
+  $data[] = $pro_name; //?にセットしたい物を記入する。
+  $data[] = intval($pro_price); //textのtypeで入力していたものをintval()を使うことで、整数に変換してから保存している。
   $data[] = $pro_image_name;
-  $stmt->execute($data); //指令を実行します
+
+  $stmt->execute($data);
 
   $dbh = null;
 
   echo $pro_name . ' を追加しました<br>';
+
 } catch (Exception $e) {
   echo '何かしらのエラーが発生しています';
   echo $e->getMessage();

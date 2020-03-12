@@ -3,7 +3,7 @@
 require_once('../common/common.php');
 
 $post = sanitize($_POST);
-//グローバル変数$_POSTは前画面のformで送信された入力データが詰まっている。中身を見るには['xxx']をつける。
+//スーパーグローバル変数$_POSTは前画面のformで送信された入力データが詰まっている。中身を見るには['xxx']をつける。
 
 $pro_name = $post['name'];
 $pro_price = $post['price'];
@@ -29,11 +29,13 @@ EOD;
 // $pro_image['size'] 画像のサイズ、単位はバイト
 // $pro_image['temp_name']　仮にアップロードされている画像本体の場所と名前
 // $pro_image['name']　画像のファイル名
+// move_uploaded_file(移動元、移動先);
+// [/]フォルダの区切り
+// [.]プログラムと同じ階層のフォルダ
 
 
 if ($pro_image['size'] > 0) {
   if ($pro_image['size'] > 1000000) {
-    // １メガバイト
     echo '画像サイズが大きすぎます..';
   } else {
     move_uploaded_file($pro_image['tmp_name'], './image/' . $pro_image['name']);
@@ -41,11 +43,6 @@ if ($pro_image['size'] > 0) {
   }
 }
 
-// 画像の移動方法
-// move_uploaded_file(移動元、移動先);
-// [/]フォルダの区切り
-// [.]プログラムと同じフォルダ
-// [..]1段上のフォルダ
 
 if ($pro_name == '' || preg_match('/^[0-9]+$/', $pro_price) == 0 || $pro_image['size'] > 1000000) {
   echo <<<EOD
@@ -65,4 +62,3 @@ EOD;
   </form>
 EOD;
 }
-// hiddenにすることでユーザーの操作を回避できる。
