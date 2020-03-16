@@ -12,8 +12,6 @@ if ($staff_name == '') {
   echo 'あなたのお名前を入力してください..<br>';
 } elseif ($staff_pass1 == '') {
   echo 'パスワードを入力してください..<br>';
-} elseif ($staff_pass2 == '') {
-  echo '再度パスワードを入力してください..<br>';
 } elseif ($staff_pass1 !== $staff_pass2) {
   echo 'パスワードが一致しません<br>';
 } else {
