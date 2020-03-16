@@ -11,7 +11,7 @@ try {
 
   $dbh = connectDB();
 
-  $sql = 'SELECT id from staff where name=? AND password=?';
+  $sql = 'SELECT name from staff where name=? AND password=?';
   $stmt = $dbh->prepare($sql);
   $data[] = $staff_name;
   $data[] = $staff_pass;
@@ -23,8 +23,8 @@ try {
 
   if ($rec == false) {
     echo 'お名前、またはパスワードの入力に間違いがあります
-       <br>
-       <a href="staff_login.php">戻る</a>';
+          <br>
+          <a href="staff_login.php">戻る</a>';
   } else {
     session_start();
     $_SESSION['login'] = 1;
