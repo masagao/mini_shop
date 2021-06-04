@@ -45,7 +45,7 @@
     }
 
     $dbh = null;
-  } catch (Exeption $e) {
+  } catch (Exception $e) {
     echo '何かしらのエラーが発生しています';
     echo $e->getMessage();
     exit();

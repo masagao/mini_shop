@@ -11,8 +11,8 @@ $pro_image = $_FILES['image'];
 
 if ($pro_name == '') {
   echo '商品名を入力してください..<br>';
-} elseif (preg_match('/^[0-9]+$/', $pro_price) == 0) {
-  //== 0 はfalseだったらなので、0-9以外の文字が入っていたらという意味。
+} elseif (!preg_match('/^[0-9]+$/', $pro_price)) {
+  // ! はfalseだったらなので、0-9以外の文字が入っていたらという意味。
   echo '正しい金額を入力してください..<br>';
 } else {
   // <<<EOD はこれから長い文字列を入力しますよという意味。EOD;で入力終了ですよという意味。

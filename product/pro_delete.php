@@ -26,9 +26,9 @@
     if ($pro_image_name == '') {
       $image = '';
     } else {
-      $image = '商品画像 : <br><img width="100" src="./image/' . $pro_image_name . '"><br>';
+      $image = '<img width="100" src="./image/' . $pro_image_name . '"><br>';
     }
-  } catch (Exeption $e) {
+  } catch (Exception $e) {
     echo '何かしらのエラーが発生しています';
     echo $e->getMessage();
     exit();
@@ -38,8 +38,10 @@
   ・商品の削除<br>
   商品名 : <?php echo $pro_name; ?>
   <br>
+  商品画像 :
+  <br>
   <?php echo $image; ?>
-  <?php echo 'この商品を削除しますか ?' ?>
+  この商品を削除しますか?
   <form method="POST" action="pro_delete_done.php">
     <input type="hidden" name="id" value="<?php echo $pro_id; ?>">
     <input type="hidden" name="name" value="<?php echo $pro_name; ?>">

@@ -30,7 +30,7 @@
     } else {
       $image = '商品画像 : <br><image width="100" src="../product/image/' . $pro_image . '"><br>';
     }
-  } catch (Exeption $e) {
+  } catch (Exception $e) {
     echo '何かしらのエラーが発生しています';
     echo $e->getMessage();
     exit();
