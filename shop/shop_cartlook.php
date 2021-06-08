@@ -38,9 +38,9 @@
       $pro_name[] = $rec['name'];
       $pro_price[] = $rec['price'];
       if ($rec['image'] == '') {
-        $pro_gazou[] = '';
+        $pro_image[] = '';
       } else {
-        $pro_gazou[] = '<img width="50" src="../product/images/' . $rec['image'] . '">';
+        $pro_image[] = '<img width="50" src="../product/images/' . $rec['image'] . '">';
       }
     }
 
@@ -56,7 +56,7 @@
     <div style="display: grid;">
       ・<?php echo $pro_name[$i]; ?> :
       <?php echo $pro_price[$i]; ?> 円 :
-      <?php echo $pro_gazou[$i]; ?>
+      <?php echo $pro_image[$i]; ?>
     </div>
   <?php } ?>
   <a href="shop_cartclear.php">カートを空にする</a>

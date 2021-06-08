@@ -28,7 +28,7 @@
     if ($pro_image == '') {
       $image = '';
     } else {
-      $image = '商品画像 : <br><image width="100" src="../product/images/' . $pro_image . '"><br>';
+      $image = '<image width="100" src="../product/images/' . $pro_image . '"><br>';
     }
   } catch (Exception $e) {
     echo '何かしらのエラーが発生しています';
@@ -41,6 +41,8 @@
   商品名 : <?php echo $pro_name; ?>
   <br>
   商品の価格 : <?php echo $pro_price; ?>
+  <br>
+  商品画像 :
   <br>
   <?php echo $image ?>
   <a href="shop_cartin.php?pro_code=<?php echo $pro_id; ?>">カートに入れる</a>
