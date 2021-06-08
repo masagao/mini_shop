@@ -10,7 +10,6 @@
   session_regenerate_id(true);
 
   try {
-
     $pro_id = $_GET['pro_code'];
 
     if (isset($_SESSION['cart'])) {

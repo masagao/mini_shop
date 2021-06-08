@@ -28,7 +28,7 @@
     if ($pro_image == '') {
       $image = '';
     } else {
-      $image = '商品画像 : <br><image width="100" src="../product/image/' . $pro_image . '"><br>';
+      $image = '商品画像 : <br><image width="100" src="../product/images/' . $pro_image . '"><br>';
     }
   } catch (Exception $e) {
     echo '何かしらのエラーが発生しています';

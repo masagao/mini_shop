@@ -40,7 +40,7 @@
       if ($rec['image'] == '') {
         $pro_gazou[] = '';
       } else {
-        $pro_gazou[] = '<img width="50" src="../product/image/' . $rec['image'] . '">';
+        $pro_gazou[] = '<img width="50" src="../product/images/' . $rec['image'] . '">';
       }
     }
 

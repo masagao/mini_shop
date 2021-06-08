@@ -26,7 +26,7 @@
     if ($pro_image_name == '') {
       $image = '';
     } else {
-      $image = '<img width="100" src="./image/' . $pro_image_name . '"><br>';
+      $image = '<img width="100" src="./images/' . $pro_image_name . '"><br>';
     }
   } catch (Exception $e) {
     echo '何かしらのエラーが発生しています';

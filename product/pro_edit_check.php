@@ -26,8 +26,8 @@ if ($pro_image['size'] > 0) {
   if ($pro_image['size'] > 1000000) {
     echo '画像サイズが大きすぎます..';
   } else {
-    move_uploaded_file($pro_image['tmp_name'], './image/' . $pro_image['name']);
-    echo '<img width="100" src="./image/' . $pro_image['name'] . '"><br>';
+    move_uploaded_file($pro_image['tmp_name'], './images/' . $pro_image['name']);
+    echo '<img width="100" src="./images/' . $pro_image['name'] . '"><br>';
   }
 }
 
